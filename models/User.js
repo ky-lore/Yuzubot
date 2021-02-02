@@ -3,7 +3,8 @@ const { model, Schema } = require('mongoose')
 const User = new Schema({
   discordid: {
     type: Number,
-    required: true
+    required: true,
+    unique: true
   },
   username: {
     type: String,

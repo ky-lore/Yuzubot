@@ -16,7 +16,7 @@ app.use(require('./routes'))
 bot.login(TOKEN);
 
 require('./db')
-  .then(() => app.listen(process.env.PORT || 3001))
+  .then(() => app.listen(process.env.PORT || 80))
   .catch(err => console.log(err))
 
 const com = require('./src/commands')

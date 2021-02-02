@@ -13,4 +13,17 @@ router.get('/users', (req, res) => {
     .catch(err => console.log(err))
 })
 
+router.get('/users/find/:id', (req, res) => {
+  User.findOne({ _id: req.params.id })
+    .then(data => {
+      res.json(data)
+    })
+})
+
+router.put('/users/find/:id', (req, res) => {
+  User.findByIdAndUpdate(req.params.id, { $set: req.body })
+    .then(() => res.sendStatus(200))
+    .catch(err => console.log(err))
+})
+
 module.exports = router

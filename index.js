@@ -19,7 +19,7 @@ require('./db')
   .then(() => app.listen(process.env.PORT || 80))
   .catch(err => console.log(err))
 
-const com = require('./src/commands')
+const yuzu = require('./commands/commands')
 
 bot.on('ready', () => {
   console.info(`Logged in as ${bot.user.tag}!`);
@@ -28,14 +28,7 @@ bot.on('ready', () => {
 bot.on('message', msg => {
   switch (msg.content) {
     case '$register':
-      com.register(msg)
+      yuzu.register(msg)
       break
   }
 })
-
-// bot.on('message', msg => {
-//   if (msg.content === '$register') {
-//   console.log(msg.author)
-//   }
-// });
-

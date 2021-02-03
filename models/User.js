@@ -16,7 +16,7 @@ const User = new Schema({
   },
   cards: [{
     type: Schema.Types.ObjectId,
-    ref: 'Item'
+    ref: 'Card'
   }],
   hasDaily: {
     type: Boolean,

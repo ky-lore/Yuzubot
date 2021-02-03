@@ -42,7 +42,7 @@ bot.on('message', msg => {
   if (msg.content[0] === "$") {
     const args = msg.content.split(/ +/);
     const command = args.shift().toLowerCase();
-    console.info(`Called command: ${command}`);
+    console.info(`${msg.author.username}#${msg.author.discriminator} called command: ${command}`);
 
     if (!bot.commands.has(command)) return;
 

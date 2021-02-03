@@ -1,2 +1,2 @@
-# Momobot
-Hololive waifu gacha game.
+# Yuzubot
+waifu gacha game.

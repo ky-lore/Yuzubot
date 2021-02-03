@@ -4,12 +4,14 @@ const { join } = require('path')
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const TOKEN = process.env.TOKEN;
+const schedule = require('node-schedule')
+const axios = require('axios')
 
 bot.commands = new Discord.Collection();
-const yuzu = require('./commands');
+const botcmd = require('./commands');
 
-Object.keys(yuzu).map(key => {
-  bot.commands.set(yuzu[key].name, yuzu[key]);
+Object.keys(botcmd).map(key => {
+  bot.commands.set(botcmd[key].name, botcmd[key]);
 });
 
 const app = express()
@@ -30,10 +32,16 @@ bot.on('ready', () => {
   console.info(`Logged in as ${bot.user.tag}!`);
 });
 
+const job = schedule.scheduleJob('1 0 0 * * *', function () {
+  axios.put('/api/users/dailyupdate')
+    .then('Daily stars are now available!')
+    .catch(err => console.error(err))
+});
+
 // bot.on('message', msg => {
 //   switch (msg.content) {
 //     case '$register':
-//       yuzu.register(msg)
+//       botcmd.register(msg)
 //       break
 //   }
 // })

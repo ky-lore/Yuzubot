@@ -33,4 +33,10 @@ router.put('/users/find/:id', (req, res) => {
     .catch(err => console.log(err))
 })
 
+router.put('/users/dailyupdate', (req, res) => {
+  User.updateMany({ }, { hasDaily: false })
+    .then(() => res.sendStatus(200))
+    .catch(err => console.log(err))
+})
+
 module.exports = router

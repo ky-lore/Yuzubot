@@ -16,6 +16,7 @@ const cardSeed = [
     subname: 'Before the Stream',
     rarity: 'UR',
     image: 'https://i.imgur.com/6Ab9XUS.png',
+    category: 'Hololive',
     id: 1
   },
   {
@@ -23,6 +24,7 @@ const cardSeed = [
     subname: 'Sui-chan wa...?',
     rarity: 'SSR',
     image: 'https://i.imgur.com/RRQzA4P.png',
+    category: 'Hololive',
     id: 2
   },
   {
@@ -30,6 +32,7 @@ const cardSeed = [
     subname: 'Neko-maid Aqua',
     rarity: 'SR',
     image: 'https://i.imgur.com/LCUXeTi.png',
+    category: 'Hololive',
     id: 3
   },
   {
@@ -37,11 +40,12 @@ const cardSeed = [
     subname: 'Kon-kon-kitsune!',
     rarity: 'R',
     image: 'https://i.imgur.com/5u9n9O4.png',
+    category: 'Hololive',
     id: 4
   }
 ]
 
-require('mongoose').connect('mongodb://localhost/momobot_db', {
+require('mongoose').connect('mongodb://localhost/yuzubot_db', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -58,7 +62,7 @@ require('mongoose').connect('mongodb://localhost/momobot_db', {
   })
   .catch(err => console.log(err))
 
-require('mongoose').connect('mongodb://localhost/momobot_db', {
+require('mongoose').connect('mongodb://localhost/yuzubot_db', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

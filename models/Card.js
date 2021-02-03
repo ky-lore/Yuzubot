@@ -18,6 +18,10 @@ const Card = new Schema({
     type: String,
     required: true
   },
+  category: {
+    type: String,
+    required: true
+  },
   id: {
     type: Number,
     required: true

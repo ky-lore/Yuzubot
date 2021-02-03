@@ -2,19 +2,23 @@ const axios = require('axios')
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 
-const isRegistered = (discordId) => {
-  axios.get(`/api/users/getdisc/${discordId}`)
-    .then(({ data }) => {
-      return data
-    })
-    .catch(e => console.error(e))
+async function checkRegistered (discordid) {
+  const res = axios.get(`/api/users/getdisc/${discordid}`)
+  const dataPromise = res.then((response) => response.data)
+  return dataPromise
+}
+
+async function isRegistered (discordid) {
+  const result = await checkRegistered(discordid)
+  return result
 }
 
 module.exports = {
   name: '$register',
   description: 'register',
-  execute(msg, args) {
-    if (isRegistered(msg.author.id)) {
+  async execute(msg, args) {
+    let isReg = await isRegistered(msg.author.id)
+    if (!isReg) {
       axios.post('/api/users', {
         discordid: msg.author.id,
         username: `${msg.author.username}#${msg.author.discriminator}`,

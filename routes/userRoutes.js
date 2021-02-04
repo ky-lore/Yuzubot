@@ -20,7 +20,7 @@ router.get('/users/find/:id', (req, res) => {
     })
 })
 
-router.get('/users/getdisc/:discordid', (req, res) => {
+router.get('/users/getbydisc/:discordid', (req, res) => {
   User.findOne({ discordid: req.params.discordid })
     .then(data => {
       res.json(data)
@@ -29,6 +29,12 @@ router.get('/users/getdisc/:discordid', (req, res) => {
 
 router.put('/users/find/:id', (req, res) => {
   User.findByIdAndUpdate(req.params.id, { $set: req.body })
+    .then(() => res.sendStatus(200))
+    .catch(err => console.log(err))
+})
+
+router.put('/users/update/:discordid', (req, res) => {
+  User.findOneAndUpdate({ discordid: req.params.discordid }, { $set: req.body })
     .then(() => res.sendStatus(200))
     .catch(err => console.log(err))
 })

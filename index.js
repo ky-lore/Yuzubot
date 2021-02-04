@@ -38,14 +38,6 @@ const job = schedule.scheduleJob('1 0 0 * * *', function () {
     .catch(err => console.error(err))
 });
 
-// bot.on('message', msg => {
-//   switch (msg.content) {
-//     case '$register':
-//       botcmd.register(msg)
-//       break
-//   }
-// })
-
 bot.on('message', msg => {
   if (msg.content[0] === "$") {
     const args = msg.content.split(/ +/);

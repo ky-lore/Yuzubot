@@ -7,6 +7,12 @@ router.get('/Cards', (req, res) => {
     .catch(err => console.log(err))
 })
 
+router.get('/Cards/category/:category', (req, res) => {
+  Card.find({ 'category': req.params.category })
+    .then(item => res.json(item))
+    .catch(err => console.log(err))
+})
+
 router.get('/Cards/id/:id', (req, res) => {
   Card.findById(req.params.id)
     .then(card => res.json(card))

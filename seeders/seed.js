@@ -1,13 +1,13 @@
 const { User, Card } = require('../models')
 
-const userSeed = [
-  {
-    discordid: '00000000000011',
-    username: 'testuser#0000',
-    stars: 100000,
-    cards: []
-  }
-]
+// const userSeed = [
+//   {
+//     discordid: '00000000000011',
+//     username: 'testuser#0000',
+//     stars: 100000,
+//     cards: []
+//   }
+// ]
 
 // IMAGES ARE 550 X 700
 const cardSeed = [
@@ -16,7 +16,7 @@ const cardSeed = [
     subname: 'Before the Stream',
     rarity: 'UR',
     image: 'https://i.imgur.com/6Ab9XUS.png',
-    category: 'Hololive',
+    category: 'hololive',
     id: 1
   },
   {
@@ -24,7 +24,7 @@ const cardSeed = [
     subname: 'Sui-chan wa...?',
     rarity: 'SSR',
     image: 'https://i.imgur.com/RRQzA4P.png',
-    category: 'Hololive',
+    category: 'hololive',
     id: 2
   },
   {
@@ -32,7 +32,7 @@ const cardSeed = [
     subname: 'Neko-maid Aqua',
     rarity: 'SR',
     image: 'https://i.imgur.com/LCUXeTi.png',
-    category: 'Hololive',
+    category: 'hololive',
     id: 3
   },
   {
@@ -40,27 +40,27 @@ const cardSeed = [
     subname: 'Kon-kon-kitsune!',
     rarity: 'R',
     image: 'https://i.imgur.com/5u9n9O4.png',
-    category: 'Hololive',
+    category: 'hololive',
     id: 4
   }
 ]
 
-require('mongoose').connect('mongodb://localhost/yuzubot_db', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-  .then(() => {
+// require('mongoose').connect('mongodb://localhost/yuzubot_db', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// })
+//   .then(() => {
 
-    User.deleteMany({})
-      .then(() => User.insertMany(userSeed))
-      .then(() => {
-        console.log('User records inserted!')
-        process.exit()
-      })
-      .catch(err => console.log(err))
+//     User.deleteMany({})
+//       .then(() => User.insertMany(userSeed))
+//       .then(() => {
+//         console.log('User records inserted!')
+//         process.exit()
+//       })
+//       .catch(err => console.log(err))
 
-  })
-  .catch(err => console.log(err))
+//   })
+//   .catch(err => console.log(err))
 
 require('mongoose').connect('mongodb://localhost/yuzubot_db', {
   useNewUrlParser: true,

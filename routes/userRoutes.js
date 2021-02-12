@@ -20,6 +20,17 @@ router.get('/users/find/:id', (req, res) => {
     })
 })
 
+router.get('/users/getall/:id', (req, res) => {
+  User.findOne({ _id: req.params.id })
+    .populate({
+      path: 'ard',
+      select: 'Card'
+    })
+    .then(data => {
+      res.json(data)
+    })
+})
+
 router.get('/users/getbydisc/:discordid', (req, res) => {
   User.findOne({ discordid: req.params.discordid })
     .then(data => {

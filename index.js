@@ -32,9 +32,11 @@ bot.on('ready', () => {
   console.info(`Logged in as ${bot.user.tag}!`)
 });
 
-const job = schedule.scheduleJob('1 0 0 * * *', function () {
+const job = schedule.scheduleJob('1 35 0 * * *', function () {
   axios.put('/api/users/dailyupdate')
-    .then(msg.channel.send('Daily stars are now available!'))
+    .then(res => {
+      console.log('Daily stars reset')
+    })
     .catch(err => console.error(err))
 })
 

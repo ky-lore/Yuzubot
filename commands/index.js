@@ -3,5 +3,6 @@ module.exports = {
   Daily: require('./daily'),
   Roll: require('./roll'),
   Thanks: require('./thanks'),
-  ShowCards: require('./showcards')
+  ShowCards: require('./showcards'),
+  AddStars: require('./addstars')
 };

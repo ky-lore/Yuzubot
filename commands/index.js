@@ -2,5 +2,6 @@ module.exports = {
   Register: require('./register'),
   Daily: require('./daily'),
   Roll: require('./roll'),
-  Thanks: require('./thanks')
+  Thanks: require('./thanks'),
+  ShowCards: require('./showcards')
 };

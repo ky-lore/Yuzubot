@@ -21,6 +21,7 @@
     "eslint": "^7.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.14",
-    "node-schedule": "^2.0.0"
+    "node-schedule": "^2.0.0",
+    "xorshift": "^1.1.1"
   }
 }

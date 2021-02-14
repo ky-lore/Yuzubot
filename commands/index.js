@@ -4,5 +4,6 @@ module.exports = {
   Roll: require('./roll'),
   Thanks: require('./thanks'),
   ShowCards: require('./showcards'),
-  AddStars: require('./addstars')
+  AddStars: require('./addstars'),
+  NewRoll: require('./newroll')
 };

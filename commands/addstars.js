@@ -6,14 +6,6 @@ const { User } = require('../models')
 
 let ADMIN = [144948446200070140, 149379082721820670, 235575391186583550]
 
-async function getStars(discId) {
-  await User.findOne({ discordid: discId })
-    .then(res => {
-      //console.log(res)
-      return res.stars
-    })
-}
-
 module.exports = {
   name: '$addstars',
   description: '(ADMIN) - Add stars',

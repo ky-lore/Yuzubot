@@ -26,17 +26,13 @@ function shuffle(array) {
 function rng() {
   let rng = Math.floor(xorshift.random() * 100)
   if (rng <= 5) { //UR rarity
-    let pick = 'UR'
-    return pick
+    return 'UR'
   } else if (rng <= 18) { //SSR rarity
-    let pick = 'SSR'
-    return pick
+    return 'SSR'
   } else if (rng <= 45) { //SR rarity
-    let pick = 'SR'
-    return pick
+    return 'SR'
   } else { //R rarity
-    let pick = 'R'
-    return pick
+    return 'R'
   }
 }
 

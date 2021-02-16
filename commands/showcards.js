@@ -26,7 +26,7 @@ module.exports = {
       .populate('cards')
       .then(({ cards }) => {
         let displayString = ''
-        let nCards = cards.filter(card => card.rarity === args[0].toUpperCase())
+        let nCards = cards.filter(card => card.rarity === args[0].toUpperCase()).reverse()
         let cutCards = nCards.slice(0, 20)
         cutCards.forEach(card => {
           if (getEmoji(card.name)) {
@@ -34,7 +34,7 @@ module.exports = {
           }
           displayString += `${card.name} - "${card.subname}" (${card.category}) ${card.image}\n`
         })
-        msg.reply(`here are your cards of **${args[0].toUpperCase()}** rarity!\`\`\`\n${displayString}\n\`\`\``)
+        msg.reply(`here are your last **20** cards of **${args[0].toUpperCase()}** rarity!\`\`\`\n${displayString}\n\`\`\``)
       })
   }
 }

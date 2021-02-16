@@ -10,5 +10,7 @@ module.exports = function (name) {
       return '🌽'
     case 'Nakiri Ayame':
       return '👿'
+    case 'Nekomata Okayu':
+      return '🍙'
   }
 }

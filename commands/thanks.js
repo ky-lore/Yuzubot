@@ -5,8 +5,8 @@ const bot = new Discord.Client()
 
 module.exports = {
   name: '$ty',
-  description: 'Get your daily coins!',
+  description: 'UWU',
   execute(msg, args) {
-    msg.reply('uwu ily')
+    msg.reply('np senpai uwu ily')
   }
 }

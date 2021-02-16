@@ -40,14 +40,6 @@ function rng() {
   }
 }
 
-// async function getCards(discordid) {
-//   User.findOne({ discordid: discordid })
-//   .then(res => {
-//     console.log(res.stars)
-//     return res.stars
-//   })
-// }
-
 module.exports = {
   name: '$roll',
   description: 'newroll',

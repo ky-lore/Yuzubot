@@ -28,10 +28,10 @@ function rng() {
   if (rng <= 5) { //UR rarity
     let pick = 'UR'
     return pick
-  } else if (rng <= 13) { //SSR rarity
+  } else if (rng <= 18) { //SSR rarity
     let pick = 'SSR'
     return pick
-  } else if (rng <= 25) { //SR rarity
+  } else if (rng <= 45) { //SR rarity
     let pick = 'SR'
     return pick
   } else { //R rarity

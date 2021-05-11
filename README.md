@@ -1,2 +1,5 @@
 # Yuzubot
-waifu gacha game.
+waifu gacha game - development in progress!
+
+## Commands
+* Daily

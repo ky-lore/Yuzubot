@@ -2,7 +2,7 @@ const axios = require('axios')
 const Discord = require('discord.js')
 const { description } = require('./register')
 const { User } = require('../models')
-const getEmoji = require('../src/getEmoji')
+const emojiMap = require('../src/getEmoji')
 
 const rarities = ['UR', 'SSR', 'SR', 'R']
 
@@ -28,8 +28,8 @@ module.exports = {
         let nCards = cards.filter(card => card.rarity === args[0].toUpperCase()).reverse()
         let cutCards = nCards.slice(0, 20)
         cutCards.forEach(card => {
-          if (getEmoji(card.name)) {
-            displayString += getEmoji(card.name) + ' '
+          if (emojiMap.get(card.name)) {
+            displayString += emojiMap.get(card.name) + ' '
           }
           displayString += `${card.name} - "${card.subname}" (${card.category}) ${card.image}\n`
         })

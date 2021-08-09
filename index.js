@@ -2,7 +2,8 @@ require('dotenv').config()
 const express = require('express')
 const { join } = require('path')
 const Discord = require('discord.js');
-const bot = new Discord.Client()
+const { Client, Intents } = require('discord.js')
+const bot = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] })
 const TOKEN = process.env.TOKEN
 const schedule = require('node-schedule')
 const axios = require('axios')

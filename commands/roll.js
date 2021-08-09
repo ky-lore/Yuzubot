@@ -1,7 +1,7 @@
 const axios = require('axios')
 const Discord = require('discord.js')
+const { MessageEmbed } = require('discord.js')
 const { description } = require('./register')
-const bot = new Discord.Client()
 const xorshift = require('xorshift');
 const { Card, User } = require('../models');
 const roll = require('./oldroll');
@@ -35,6 +35,9 @@ function rng() {
     return 'R'
   }
 }
+
+const exampleEmbed = new MessageEmbed()
+	.setColor('#0099ff')
 
 module.exports = {
   name: '$roll',

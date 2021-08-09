@@ -1,7 +1,6 @@
 const axios = require('axios')
 const Discord = require('discord.js')
 const { description } = require('./register')
-const bot = new Discord.Client()
 const { User } = require('../models')
 
 let ADMIN = [144948446200070140, 149379082721820670, 235575391186583550, 0]

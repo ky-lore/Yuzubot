@@ -1,6 +1,5 @@
 const axios = require('axios')
 const Discord = require('discord.js')
-const bot = new Discord.Client()
 
 async function checkRegistered (discordid) {
   const res = axios.get(`/api/users/getbydisc/${discordid}`)

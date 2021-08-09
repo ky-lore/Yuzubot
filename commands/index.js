@@ -6,5 +6,6 @@ module.exports = {
   ShowCards: require('./showcards'),
   AddStars: require('./addstars'),
   Roll: require('./roll'),
-  Commands: require('./listcommands')
+  Commands: require('./listcommands'),
+  EmbedTest: require('./embedtest')
 };

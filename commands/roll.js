@@ -36,8 +36,12 @@ function rng() {
   }
 }
 
-const exampleEmbed = new MessageEmbed()
-	.setColor('#0099ff')
+const colorMap = new Map()
+
+colorMap.set('UR', '#FE4365')
+colorMap.set('SSR', '#FBB829')
+colorMap.set('SR', '#BD228A')
+colorMap.set('R', '#BAE4E5')
 
 module.exports = {
   name: '$roll',
@@ -62,7 +66,6 @@ module.exports = {
         let ownedCards = res.cards
         Card.find({ category: args[0].toLowerCase(), rarity: pick })
           .then(cards => {
-            // console.log(ownedCards)
             shuffle(cards)
             let rolledCard = cards[0]
             ownedCards.push(rolledCard)
@@ -73,9 +76,18 @@ module.exports = {
             .then(res => {
               msg.reply(`you used \`300\` stars. You have \`${ownedStars}\` stars left!`)
               msg.channel.send(`> rolling for <@${msg.author.id}>...`)
-              msg.channel.send(`<@${msg.author.id}> got **${rolledCard.rarity}** ${rolledCard.name} - *${rolledCard.subname}*`, {
-                files: [`${rolledCard.image}`]
-              })
+              // msg.channel.send(`<@${msg.author.id}> got **${rolledCard.rarity}** ${rolledCard.name} - *${rolledCard.subname}*`, {
+              //   files: [`${rolledCard.image}`]
+              // })
+
+              const cardEmbed = new MessageEmbed()
+              .setColor(colorMap.get(`${rolledCard.rarity}`))
+              .addField(`${rolledCard.name}`, `${rolledCard.subname} (${rolledCard.rarity})`, true)
+              .setImage(`${rolledCard.image}`)
+              .setTimestamp()
+              .setFooter('Thanks for rolling with Yuzu!', 'https://i.imgur.com/AfFp7pu.png');
+
+              msg.reply({ embeds: [cardEmbed] })
             })
           })
           .catch(err => console.error(err))

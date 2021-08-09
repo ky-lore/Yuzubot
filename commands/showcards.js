@@ -14,7 +14,7 @@ module.exports = {
     }
 
     if (!rarities.includes(args[0].toUpperCase())) {
-      msg.reply('that rarity does not exist')
+      msg.reply('t-that rarity does not exist')
       return
     }
 

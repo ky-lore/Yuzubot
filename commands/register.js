@@ -1,5 +1,4 @@
 const axios = require('axios')
-const Discord = require('discord.js')
 
 async function checkRegistered (discordid) {
   const res = axios.get(`/api/users/getbydisc/${discordid}`)
@@ -8,8 +7,7 @@ async function checkRegistered (discordid) {
 }
 
 async function isRegistered (discordid) {
-  const result = await checkRegistered(discordid)
-  return result
+  return await checkRegistered(discordid)
 }
 
 module.exports = {

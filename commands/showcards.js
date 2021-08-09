@@ -1,6 +1,3 @@
-const axios = require('axios')
-const Discord = require('discord.js')
-const { description } = require('./register')
 const { User } = require('../models')
 const emojiMap = require('../src/getEmoji')
 

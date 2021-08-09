@@ -1,7 +1,4 @@
 const axios = require('axios')
-const Discord = require('discord.js')
-const { description } = require('./register')
-
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex

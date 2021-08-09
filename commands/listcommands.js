@@ -1,6 +1,3 @@
-const axios = require('axios')
-const Discord = require('discord.js')
-const { description } = require('./register')
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
@@ -27,7 +24,7 @@ module.exports = {
       value: 'thank Yuzu uwu'
     })
     .setFooter('View the source code here! https://github.com/ky-lore/Yuzubot', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png')
-    
+
 //     msg.channel.send(`Here are a list of commands you can use:
 // \`\`\`$daily - claim your daily stars! Resets at midnight, PST/PDT (UTC -8)
 // $roll <category> - use 300 stars for a single roll!

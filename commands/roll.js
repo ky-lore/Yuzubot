@@ -1,10 +1,7 @@
 const axios = require('axios')
-const Discord = require('discord.js')
 const { MessageEmbed } = require('discord.js')
-const { description } = require('./register')
 const xorshift = require('xorshift');
 const { Card, User } = require('../models');
-const roll = require('./oldroll');
 
 const categories = ['hololive']
 

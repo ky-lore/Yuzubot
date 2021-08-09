@@ -1,5 +1,5 @@
 # Yuzubot
-waifu gacha game - development in progress!
+waifu gacha game - development in progress! Yuzu is currently in alpha mode with nightly builds being published every few days. If you'd like to join an alpha-test server or add her to your own, please contact ayatori#2000!
 
 ## What is Yuzubot?
 Yuzubot is an game/application for any Discord server - add it to your server with just an invite link and start collecting 'cards' of your favorite characters through a gacha-style roll system! Extremely user-friendly and operable with simple chat commands.

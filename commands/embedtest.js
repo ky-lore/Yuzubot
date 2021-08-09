@@ -6,7 +6,7 @@ module.exports = {
   execute(msg, args) {
     const exampleEmbed = new MessageEmbed()
 	.setColor('#0099ff')
-	.addField('Inline field title', 'Some value here', true)
+	.addField('Inline field title', 'https://i.imgur.com/AfFp7pu.png', true)
 	.setImage('https://i.imgur.com/6Ab9XUS.png')
 	.setTimestamp()
 	.setFooter('Thanks for rolling with Yuzu!', 'https://i.imgur.com/AfFp7pu.png');

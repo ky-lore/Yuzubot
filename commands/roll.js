@@ -76,9 +76,6 @@ module.exports = {
             .then(res => {
               msg.reply(`you used \`300\` stars. You have \`${ownedStars}\` stars left!`)
               msg.channel.send(`> rolling for <@${msg.author.id}>...`)
-              // msg.channel.send(`<@${msg.author.id}> got **${rolledCard.rarity}** ${rolledCard.name} - *${rolledCard.subname}*`, {
-              //   files: [`${rolledCard.image}`]
-              // })
 
               const cardEmbed = new MessageEmbed()
               .setColor(colorMap.get(`${rolledCard.rarity}`))

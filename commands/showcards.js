@@ -28,7 +28,7 @@ module.exports = {
           if (emojiMap.get(card.name)) {
             displayString += emojiMap.get(card.name) + ' '
           }
-          displayString += `${card.name} - "${card.subname}" (${card.category}) ${card.image}\n`
+          displayString += `${card.name} - "${card.subname}" (${card.category}) ${card.image} (id: ${card.id})\n`
         })
         msg.reply(`here are your last **20** cards of **${args[0].toUpperCase()}** rarity!\`\`\`\n${displayString}\n\`\`\``)
       })

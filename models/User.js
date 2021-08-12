@@ -21,7 +21,11 @@ const User = new Schema({
   hasDaily: {
     type: Boolean,
     default: false
-  }
+  },
+  favorites: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Card'
+  }]
 }, { timestamps: true })
 
 module.exports = model('User', User)

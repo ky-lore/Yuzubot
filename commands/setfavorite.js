@@ -1,7 +1,8 @@
 const { User, Card } = require('../models')
 const axios = require('axios')
+const { MessageEmbed, channel } = require('discord.js')
 
-function checkOwnedAndHandle(reqId, user) {
+function checkOwnedAndHandle(reqId, user, msg) {
     User.findOne({ discordid: user })
         .populate('cards')
         .then(({ cards }) => {
@@ -11,31 +12,32 @@ function checkOwnedAndHandle(reqId, user) {
                     check = true
                 }
             })
-            check ? isOwned(reqId, user) : isOwned(false)
+            check ? isOwned(reqId, user, msg) : isOwned(false)
         })
 }
 
-function isOwned(cardId, user) {
-    console.log(cardId, user)
-
+function isOwned(cardId, user, msg) {
     var favCards = []
 
     User.findOne({ discordid: user })
         .then(({ favorites }) => {
-            favorites.forEach(fav => {
-                favCards.push(fav)
-                console.log(favCards)
-            })
+            favorites.forEach(fav => { favCards.push(fav) })
         })
+
 
     Card.findOne({ id: cardId })
         .then(card => {
             favCards.push(card)
             axios.put(`/api/users/update/${user}`, { favorites: favCards })
-            // User.updateOne({ discordid: user }, { favorites: favCards })
+            const favEmbed = new MessageEmbed()
+            .setColor('#A589E2')
+            .addField(`${card.name} - *${card.subname}*`, `added to ${msg.author.username}'s favorites!`)
+            msg.reply({ embeds: [favEmbed] })
         })
-    // User.findOneAndUpdate({ discordid: user })
+}
 
+function tooMany(msg) {
+    msg.reply({ content: 'Too many' })
 }
 
 module.exports = {
@@ -48,6 +50,6 @@ module.exports = {
             return
         }
 
-        checkOwnedAndHandle(args[0], msg.author.id)
+        checkOwnedAndHandle(args[0], msg.author.id, msg)
     }
 }

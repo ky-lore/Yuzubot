@@ -50,10 +50,11 @@ module.exports = {
       return
     }
 
-    if(!categories.includes(args[0].toLowerCase())) {
+    if (!categories.includes(args[0].toLowerCase())) {
       msg.reply('that category does not exist')
       return
     }
+
 
     let pick = rng()
 
@@ -70,19 +71,22 @@ module.exports = {
               cards: ownedCards,
               stars: ownedStars -= 300
             })
-            .then(res => {
-              msg.reply(`you used \`300\` stars. You have \`${ownedStars}\` stars left!`)
-              msg.channel.send(`> rolling for <@${msg.author.id}>...`)
+              .then(res => {
+                msg.reply(`you used \`300\` stars. You have \`${ownedStars}\` stars left!`)
+                msg.channel.send(`> rolling for <@${msg.author.id}>...`)
 
-              const cardEmbed = new MessageEmbed()
-              .setColor(colorMap.get(`${rolledCard.rarity}`))
-              .addField(`${rolledCard.name}`, `${rolledCard.subname} (${rolledCard.rarity})`, true)
-              .setImage(`${rolledCard.image}`)
-              .setTimestamp()
-              .setFooter('Thanks for rolling with Yuzu!', 'https://i.imgur.com/AfFp7pu.png');
+                setTimeout(() => {
+                  const cardEmbed = new MessageEmbed()
+                    .setColor(colorMap.get(`${rolledCard.rarity}`))
+                    .addField(`${rolledCard.name}`, `${rolledCard.subname} (${rolledCard.rarity})`, true)
+                    .setImage(`${rolledCard.image}`)
+                    .setTimestamp()
+                    .setFooter('Thanks for rolling with Yuzu!', 'https://i.imgur.com/AfFp7pu.png');
 
-              msg.reply({ embeds: [cardEmbed] })
-            })
+                  msg.reply({ embeds: [cardEmbed] })
+                }, 3000)
+                
+              })
           })
           .catch(err => console.error(err))
       })

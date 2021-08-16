@@ -7,5 +7,6 @@ module.exports = {
   Roll: require('./roll'),
   Commands: require('./listcommands'),
   EmbedTest: require('./embedtest'),
-  SetFav: require('./setfavorite')
+  SetFav: require('./setfavorite'),
+  Favorites: require('./favorites')
 };

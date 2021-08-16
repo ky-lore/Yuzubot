@@ -8,5 +8,6 @@ module.exports = {
   Commands: require('./listcommands'),
   EmbedTest: require('./embedtest'),
   SetFav: require('./setfavorite'),
-  Favorites: require('./favorites')
+  Favorites: require('./favorites'),
+  debugRemoveFav: require('./debugremovefav')
 };

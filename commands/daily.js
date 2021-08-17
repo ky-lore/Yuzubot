@@ -10,11 +10,11 @@ module.exports = {
       if(!data.hasDaily) {
 
         axios.put(`/api/users/update/${msg.author.id}`, {
-          stars: stars+250,
+          stars: stars+300,
           hasDaily: true
         })
         .then(res => {
-          msg.reply(`you have claimed your daily \`250\` stars! You are now at \`${stars + 250}\` stars!`)
+          msg.reply(`you have claimed your daily \`300\` stars! You are now at \`${stars + 250}\` stars!`)
         })
         .catch(err => console.error(err))
 

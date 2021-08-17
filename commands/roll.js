@@ -69,10 +69,10 @@ module.exports = {
             ownedCards.push(rolledCard)
             axios.put(`/api/users/update/${msg.author.id}`, {
               cards: ownedCards,
-              stars: ownedStars -= 300
+              stars: ownedStars -= 200
             })
               .then(res => {
-                msg.reply(`you used \`300\` stars. You have \`${ownedStars}\` stars left!`)
+                msg.reply(`you used \`200\` stars. You have \`${ownedStars}\` stars left!`)
                 msg.channel.send(`> rolling for <@${msg.author.id}>...`)
 
                 setTimeout(() => {
@@ -85,7 +85,7 @@ module.exports = {
 
                   msg.reply({ embeds: [cardEmbed] })
                 }, 3000)
-                
+
               })
           })
           .catch(err => console.error(err))

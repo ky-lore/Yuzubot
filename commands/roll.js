@@ -82,7 +82,6 @@ module.exports = {
                     .setImage(`${rolledCard.image}`)
                     .setTimestamp()
                     .setFooter('Thanks for rolling with Yuzu!', 'https://i.imgur.com/AfFp7pu.png');
-
                   msg.reply({ embeds: [cardEmbed] })
                 }, 3000)
 

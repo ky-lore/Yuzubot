@@ -55,12 +55,10 @@ module.exports = {
     name: '$setfav',
     description: 'Show cards',
     execute(msg, args) {
-
         if (!args[0]) {
             msg.reply('please pick a card ID to set a favorite!\nExample: ```$setfav 2```\nYou can view card IDs with ```$showcards <rarity>```')
             return
         }
-
         checkOwnedAndHandle(args[0], msg.author.id, msg)
     }
 }

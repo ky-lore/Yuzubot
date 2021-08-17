@@ -11,7 +11,7 @@ Yuzubot is an game/application for any Discord server - add it to your server wi
 
 `$register` - Registers you in the Yuzubot database
 
-`$roll` - Uses 250 of your owned stars for a roll
+`$roll` - Uses 200 of your owned stars for a roll
 
 `$showcards` - Shows you the last 20 cards you rolled for any given rarity
 

@@ -13,6 +13,10 @@ Yuzubot is an game/application for any Discord server - add it to your server wi
 
 `$roll` - Uses 200 of your owned stars for a roll
 
-`$showcards` - Shows you the last 20 cards you rolled for any given rarity
+`$showcards` - Shows you the last X cards you rolled, or for any given rarity
 
 `$setfav` - Sets a favorite card for easy display/flexing - you can have up to 5!
+
+`$removefav` - Removes a card from your favorites to make room for another!
+
+`$fav` - show off your beautiful waifus

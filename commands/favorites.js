@@ -21,7 +21,7 @@ module.exports = {
                     .setColor(colorMap.get(`${card.rarity}`))
                     .addField(`${card.name}`, `${card.subname} (${card.rarity})`, true)
                     .setImage(`${card.image}`)
-                    .setFooter(`${msg.author.username}'s favorites! (${i+1}/5)`)
+                    .setFooter(`${msg.author.username}'s favorites! (${i+1}/5) id: ${card.id}`)
                 msg.reply({ embeds: [cardEmbed] })
             })
         })

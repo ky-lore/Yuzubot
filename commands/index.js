@@ -9,5 +9,6 @@ module.exports = {
   EmbedTest: require('./embedtest'),
   SetFav: require('./setfavorite'),
   Favorites: require('./favorites'),
-  debugRemoveFav: require('./debugremovefav')
+  debugRemoveFav: require('./debugremovefav'),
+  RemoveFav: require('./removefav')
 };

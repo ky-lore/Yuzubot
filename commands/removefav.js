@@ -1,6 +1,5 @@
 const { User } = require('../models')
-const { MessageEmbed } = require('discord.js')
-
+const axios = require('axios')
 
 
 module.exports = {
@@ -16,8 +15,11 @@ module.exports = {
         User.findOne({ discordid: msg.author.id })
             .populate('favorites')
             .then(({ favorites: favs }) => {
-                User.findOneAndUpdate({ discordid: msg.author.id }, { favorites: favs.filter(card => card.id != parseInt(args[0])) })
-                msg.reply(``)
+                axios.put(`/api/users/update/${msg.author.id}`,
+                    {
+                        favorites: favs.filter(card => card.id != parseInt(args[0]))
+                    })
+                msg.reply(`r-removed!`)
             })
     }
 }

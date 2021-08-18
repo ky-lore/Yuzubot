@@ -40,15 +40,15 @@ function setFavorite(cardId, user, msg) {
         })
 }
 
+function handleError(msg, limit) {
+    limit ? notOwned(msg) : msg.reply({ content: 'you have too many cards! p-please remove one to add more...' })
+}
+
 function notOwned(msg) {
     msg.reply({ content: `y-you don't own that card s-senpai...` })
     setTimeout(() => {
         msg.channel.send({ content: `but i-i hope you get her soon...! <@${msg.author.id}>`})
     }, 2000)
-}
-
-function handleError(msg, limit) {
-    limit ? notOwned(msg) : msg.reply({ content: 'you have too many cards! p-please remove one to add more...' })
 }
 
 module.exports = {

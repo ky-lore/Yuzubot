@@ -51,7 +51,7 @@ module.exports = {
     }
 
     if (!categories.includes(args[0].toLowerCase())) {
-      msg.reply('that category does not exist')
+      msg.reply('t-that category does not exist')
       return
     }
 

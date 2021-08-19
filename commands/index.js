@@ -10,5 +10,6 @@ module.exports = {
   SetFav: require('./setfavorite'),
   Favorites: require('./favorites'),
   debugRemoveFav: require('./debugremovefav'),
-  RemoveFav: require('./removefav')
+  RemoveFav: require('./removefav'),
+  debugAsyncTest: require('./async')
 };

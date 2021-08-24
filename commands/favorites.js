@@ -25,6 +25,5 @@ module.exports = {
                 msg.reply({ embeds: [cardEmbed] })
             })
         })
-
     }
 }

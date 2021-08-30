@@ -21,6 +21,11 @@ module.exports = {
 
         args[0] ? nCards = cards.filter(card => card.rarity === args[0].toUpperCase()) : nCards = cards 
 
+        if (args[1] && args[1] > 20) {
+          msg.reply('you can only select up to 20~')
+          return
+        }
+
         let limit = args[1] ? args[1] : 20
 
         let cutCards = nCards.reverse().slice(0, limit)

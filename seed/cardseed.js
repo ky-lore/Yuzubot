@@ -288,8 +288,144 @@ const cardSeed = [
     image: 'https://i.imgur.com/JUiuPdb.jpeg',
     category: 'genshin',
     id: 123
-  }
+  },
   // 8/30/2021 cut
+  {
+    name: 'Hoshimachi Suisei',
+    subname: 'Shoujo Rei',
+    rarity: 'UR',
+    image: 'https://i.imgur.com/KPBCf85.jpg',
+    category: 'hololive',
+    id: 14
+  },
+  {
+    name: 'Hoshimachi Suisei',
+    subname: 'Kyou mo Kawaii!',
+    rarity: 'R',
+    image: 'https://i.imgur.com/jAkcxkl.jpg',
+    category: 'hololive',
+    id: 15
+  },
+  {
+    name: 'Houshou Marine',
+    subname: 'Night Senchou',
+    rarity: 'SSR',
+    image: 'https://i.imgur.com/P0AQ7m1.jpg',
+    category: 'hololive',
+    id: 16
+  },
+  {
+    name: 'Minato Aqua',
+    subname: 'Kon-Aqua?!',
+    rarity: 'R',
+    image: 'https://i.imgur.com/KGTunv8.jpg',
+    category: 'hololive',
+    id: 17
+  },
+  {
+    name: 'Momosuzu Nene',
+    subname: 'Peach on the Beach',
+    rarity: 'SSR',
+    image: 'https://i.imgur.com/XG83uIr.jpg',
+    category: 'hololive',
+    id: 18
+  },
+  {
+    name: 'Momosuzu Nene',
+    subname: 'Super Idol Nenechi!',
+    rarity: 'SR',
+    image: 'https://i.imgur.com/tlMytRN.jpg',
+    category: 'hololive',
+    id: 19
+  },
+  {
+    name: 'Mori Calliope',
+    subname: 'Grim Reaper, Live Streamer',
+    rarity: 'R',
+    image: 'https://i.imgur.com/1yJAAkG.jpg',
+    category: 'hololive',
+    id: 20
+  },
+  {
+    name: 'Ouro Kronii',
+    subname: 'Warden of Time',
+    rarity: 'R',
+    image: 'https://i.imgur.com/KixXpvG.jpg',
+    category: 'hololive',
+    id: 21
+  },
+  {
+    name: 'Shirakami Fubuki',
+    subname: 'Winterfox',
+    rarity: 'SSR',
+    image: 'https://i.imgur.com/GPKax5M.jpg',
+    category: 'hololive',
+    id: 22
+  },
+  {
+    name: 'Shirakami Fubuki',
+    subname: 'Fubuki x To-Love RU',
+    rarity: 'UR',
+    image: 'https://i.imgur.com/Rbi9zGT.jpg',
+    category: 'hololive',
+    id: 23
+  },
+  {
+    name: 'Shishiro Botan',
+    subname: 'La-Lion',
+    rarity: 'R',
+    image: 'https://i.imgur.com/MxdYcNC.png',
+    category: 'hololive',
+    id: 24
+  },
+  {
+    name: 'Shishiro Botan',
+    subname: 'Digithreat',
+    rarity: 'SR',
+    image: 'https://i.imgur.com/4Htgyiw.jpg',
+    category: 'hololive',
+    id: 25
+  },
+  {
+    name: 'Tokoyami Towa',
+    subname: 'Ready to go?',
+    rarity: 'SSR',
+    image: 'https://i.imgur.com/CxM1IcR.jpg',
+    category: 'hololive',
+    id: 26
+  },
+  {
+    name: 'Uruha Rushia',
+    subname: 'Kon-Rushi!',
+    rarity: 'R',
+    image: 'https://i.imgur.com/5Edx4yZ.jpg',
+    category: 'hololive',
+    id: 27
+  },
+  {
+    name: 'Uruha Rushia',
+    subname: 'Slow Morning',
+    rarity: 'SSR',
+    image: 'https://i.imgur.com/erPpcvv.jpg',
+    category: 'hololive',
+    id: 28
+  },
+  {
+    name: 'Usada Pekora',
+    subname: 'Kon-peko, kon-peko, kon-peko!',
+    rarity: 'R',
+    image: 'https://i.imgur.com/bTlChsE.jpg',
+    category: 'hololive',
+    id: 29
+  },
+  {
+    name: 'Usada Pekora',
+    subname: "You're late.",
+    rarity: 'SSR',
+    image: 'https://i.imgur.com/4YwmszC.jpg',
+    category: 'hololive',
+    id: 30
+  }
 ]
 // IMAGES ARE 550 X 700
 

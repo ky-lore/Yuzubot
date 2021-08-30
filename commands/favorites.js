@@ -1,12 +1,8 @@
 const { User } = require('../models')
 const { MessageEmbed } = require('discord.js')
 
-const colorMap = new Map()
+const colorMap = require('../src/colormap')
 
-colorMap.set('UR', '#FE4365')
-colorMap.set('SSR', '#FBB829')
-colorMap.set('SR', '#BD228A')
-colorMap.set('R', '#BAE4E5')
 
 module.exports = {
     name: '$fav',

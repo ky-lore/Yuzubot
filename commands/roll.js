@@ -2,6 +2,7 @@ const axios = require('axios')
 const { MessageEmbed } = require('discord.js')
 const xorshift = require('xorshift');
 const { Card, User } = require('../models');
+const colorMap = require('../src/colormap')
 
 const categories = ['hololive', 'genshin']
 
@@ -33,12 +34,6 @@ function rng() {
   }
 }
 
-const colorMap = new Map()
-
-colorMap.set('UR', '#FE4365')
-colorMap.set('SSR', '#BD228A')
-colorMap.set('SR', '#FBB829')
-colorMap.set('R', '#BAE4E5')
 
 module.exports = {
   name: '$roll',
@@ -80,8 +75,7 @@ module.exports = {
                     .setColor(colorMap.get(`${rolledCard.rarity}`))
                     .addField(`${rolledCard.name}`, `${rolledCard.subname} (${rolledCard.rarity})`, true)
                     .setImage(`${rolledCard.image}`)
-                    .setTimestamp()
-                    .setFooter('Thanks for rolling with Yuzu!', 'https://i.imgur.com/AfFp7pu.png');
+                    .setFooter(`Thanks for rolling with Yuzu! • id: ${rolledCard.id}`, 'https://i.imgur.com/AfFp7pu.png');
                   msg.reply({ embeds: [cardEmbed] })
                 }, 3000)
 

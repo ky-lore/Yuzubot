@@ -3,7 +3,6 @@ const { model, Schema } = require('mongoose')
 const Card = new Schema({
   name: {
     type: String,
-    unique: true
   },
   subname: {
     type: String,
@@ -24,7 +23,7 @@ const Card = new Schema({
   },
   id: {
     type: Number,
-    required: true
+    unique: true
   }
 }, { timestamps: true })
 

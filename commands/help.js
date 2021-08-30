@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
-  name: '$commands',
+  name: '$help',
   description: 'List commands',
   execute(msg, args) {
 
@@ -12,13 +12,13 @@ module.exports = {
       value: 'claim your daily stars! Resets at midnight, PST/PDT (UTC -8)'
     }, {
       name: '$roll <category>',
-      value: 'use 300 stars for a single roll!'
+      value: 'use 250 stars for a single roll!'
     }, {
       name: '$register',
       value: 'register yourself in the Yuzubot database with 4000 stars!'
     }, {
-      name: '$showcards <rarity>',
-      value: 'show your latest 20 cards of any rarity!'
+      name: '$showcards <rarity> <quantity>',
+      value: 'show your latest cards of any rarity!'
     }, {
       name: '$ty',
       value: 'thank Yuzu uwu'

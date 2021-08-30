@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js')
 const xorshift = require('xorshift');
 const { Card, User } = require('../models');
 
-const categories = ['hololive']
+const categories = ['hololive', 'genshin']
 
 function shuffle(array) {
   let currentIndex = array.length, temporaryValue, randomIndex
@@ -36,8 +36,8 @@ function rng() {
 const colorMap = new Map()
 
 colorMap.set('UR', '#FE4365')
-colorMap.set('SSR', '#FBB829')
-colorMap.set('SR', '#BD228A')
+colorMap.set('SSR', '#BD228A')
+colorMap.set('SR', '#FBB829')
 colorMap.set('R', '#BAE4E5')
 
 module.exports = {
@@ -69,10 +69,10 @@ module.exports = {
             ownedCards.push(rolledCard)
             axios.put(`/api/users/update/${msg.author.id}`, {
               cards: ownedCards,
-              stars: ownedStars -= 200
+              stars: ownedStars -= 250
             })
               .then(res => {
-                msg.reply(`you used \`200\` stars. You have \`${ownedStars}\` stars left!`)
+                msg.reply(`you used \`250\` stars. You have \`${ownedStars}\` stars left!`)
                 msg.channel.send(`> rolling for <@${msg.author.id}>...`)
 
                 setTimeout(() => {

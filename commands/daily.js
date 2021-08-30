@@ -10,7 +10,7 @@ module.exports = {
       if(!data.hasDaily) {
 
         axios.put(`/api/users/update/${msg.author.id}`, {
-          stars: stars+300,
+          stars: stars+1000,
           hasDaily: true
         })
         .then(res => {

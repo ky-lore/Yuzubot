@@ -5,7 +5,7 @@ module.exports = {
   ShowCards: require('./showcards'),
   AddStars: require('./addstars'),
   Roll: require('./roll'),
-  Commands: require('./listcommands'),
+  Commands: require('./help'),
   EmbedTest: require('./embedtest'),
   SetFav: require('./setfavorite'),
   Favorites: require('./favorites'),

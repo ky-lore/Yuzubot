@@ -19,11 +19,11 @@ module.exports = {
         let displayString = ''
         let nCards = []
 
-        args[0] ? nCards = cards.filter(card => card.rarity === args[0].toUpperCase()).reverse() : nCards = cards 
+        args[0] ? nCards = cards.filter(card => card.rarity === args[0].toUpperCase()) : nCards = cards 
 
         let limit = args[1] ? args[1] : 20
 
-        let cutCards = nCards.slice(0, limit)
+        let cutCards = nCards.reverse().slice(0, limit)
 
         cutCards.forEach(card => {
           if (emojiMap.get(card.name)) { displayString += emojiMap.get(card.name) + ' '}

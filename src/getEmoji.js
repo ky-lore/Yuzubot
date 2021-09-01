@@ -14,5 +14,6 @@ emojiMap.set('Uruha Rushia', '🦋')
 emojiMap.set('Mori Calliope', '💀')
 emojiMap.set('Tsunomaki Watame', '🐑')
 emojiMap.set('Usada Pekora', '🥕')
+emojiMap.set('Momosuzu Nene', '🥟')
 
 module.exports = emojiMap

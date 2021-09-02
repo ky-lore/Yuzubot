@@ -23,7 +23,6 @@ module.exports = {
       return
     }
 
-
     let pick = rng()
 
     User.findOne({ discordid: msg.author.id })

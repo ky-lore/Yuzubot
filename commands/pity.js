@@ -8,7 +8,7 @@ const shuffle = require('../src/shuffle')
 const categories = ['hololive', 'genshin']
 
 module.exports = {
-  name: '$roll',
+  name: '$pity',
   description: 'newroll',
   async execute(msg, args) {
 

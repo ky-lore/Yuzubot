@@ -11,5 +11,6 @@ module.exports = {
   Favorites: require('./favorites'),
   debugRemoveFav: require('./debugremovefav'),
   RemoveFav: require('./removefav'),
-  debugAsyncTest: require('./async')
+  debugAsyncTest: require('./async'),
+  Pity: require('./pity')
 };

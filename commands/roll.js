@@ -3,37 +3,10 @@ const { MessageEmbed } = require('discord.js')
 const xorshift = require('xorshift');
 const { Card, User } = require('../models');
 const colorMap = require('../src/colormap')
+const rng = require('../src/rng')
+const shuffle = require('../src/shuffle')
 
 const categories = ['hololive', 'genshin']
-
-function shuffle(array) {
-  let currentIndex = array.length, temporaryValue, randomIndex
-
-  while (0 !== currentIndex) {
-    randomIndex = Math.floor(Math.random() * currentIndex)
-    currentIndex -= 1
-
-    temporaryValue = array[currentIndex]
-    array[currentIndex] = array[randomIndex]
-    array[randomIndex] = temporaryValue
-  }
-
-  return array
-}
-
-function rng() {
-  let rng = Math.floor(xorshift.random() * 100)
-  if (rng <= 5) { //UR rarity
-    return 'UR'
-  } else if (rng <= 18) { //SSR rarity
-    return 'SSR'
-  } else if (rng <= 45) { //SR rarity
-    return 'SR'
-  } else { //R rarity
-    return 'R'
-  }
-}
-
 
 module.exports = {
   name: '$roll',

@@ -2,7 +2,6 @@ const axios = require('axios')
 const { MessageEmbed } = require('discord.js')
 const { Card, User } = require('../models');
 const colorMap = require('../src/colormap')
-const rng = require('../src/rng')
 const shuffle = require('../src/shuffle')
 
 const categories = ['hololive', 'genshin']
@@ -13,7 +12,7 @@ module.exports = {
   async execute(msg, args) {
 
     if (!args[0]) {
-      msg.reply('please enter a category to roll in! For example: \`$roll hololive\`')
+      msg.reply('please enter a category to use your pity in! For example: \`$pity hololive\`')
       return
     }
 
@@ -22,24 +21,25 @@ module.exports = {
       return
     }
 
-    let pick = rng()
-
     User.findOne({ discordid: msg.author.id })
       .then(res => {
-        let ownedStars = res.stars
         let ownedCards = res.cards
-        Card.find({ category: args[0].toLowerCase(), rarity: pick })
+        let ownedPity = res.pity
+        if(ownedPity <= 20) {
+            msg.reply(`y-you don't have enough pity saved up... you have ${ownedPity}`)
+            return
+        }
+        Card.find({ category: args[0].toLowerCase(), rarity: 'UR' })
           .then(cards => {
             shuffle(cards)
             let rolledCard = cards[0]
             ownedCards.push(rolledCard)
             axios.put(`/api/users/update/${msg.author.id}`, {
               cards: ownedCards,
-              stars: ownedStars -= 250
+              pity: ownedPity -= 20
             })
-              .then(res => {
-                msg.reply(`you used \`250\` stars. You have \`${ownedStars}\` stars left!`)
-                msg.channel.send(`> rolling for <@${msg.author.id}>...`)
+              .then(() => {
+                msg.channel.send(`> pity rolling for <@${msg.author.id}>... you are now at \`${ownedPity}\` pity`)
 
                 setTimeout(() => {
                   const cardEmbed = new MessageEmbed()

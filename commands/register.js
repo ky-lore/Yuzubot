@@ -20,7 +20,8 @@ module.exports = {
         discordid: msg.author.id,
         username: `${msg.author.username}#${msg.author.discriminator}`,
         stars: 4000,
-        cards: []
+        cards: [],
+        pity: 1
       })
         .then(res => {
           if (res.status === 200) {

@@ -28,6 +28,7 @@ module.exports = {
       .then(res => {
         let ownedStars = res.stars
         let ownedCards = res.cards
+        let ownedPity = res.pity
         Card.find({ category: args[0].toLowerCase(), rarity: pick })
           .then(cards => {
             shuffle(cards)
@@ -35,9 +36,10 @@ module.exports = {
             ownedCards.push(rolledCard)
             axios.put(`/api/users/update/${msg.author.id}`, {
               cards: ownedCards,
-              stars: ownedStars -= 250
+              stars: ownedStars -= 250,
+              pity: ownedPity += 1
             })
-              .then(res => {
+              .then(() => {
                 msg.reply(`you used \`250\` stars. You have \`${ownedStars}\` stars left!`)
                 msg.channel.send(`> rolling for <@${msg.author.id}>...`)
 

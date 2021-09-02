@@ -14,6 +14,9 @@ const User = new Schema({
   stars: {
     type: Number
   },
+  pity: {
+    type: Number
+  },
   cards: [{
     type: Schema.Types.ObjectId,
     ref: 'Card'

@@ -12,6 +12,7 @@ module.exports = {
         User.findOne({ discordid: msg.author.id })
         .populate('favorites')
         .then(({ favorites }) => {
+            console.log(favorites)
             favorites.forEach((card, i) => {
                 const cardEmbed = new MessageEmbed()
                     .setColor(colorMap.get(`${card.rarity}`))

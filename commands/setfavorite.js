@@ -21,15 +21,15 @@ function checkOwnedAndHandle(reqId, user, msg) {
         })
 }
 
-function setFavorite(cardId, user, msg) {
+async function setFavorite(cardId, user, msg) {
     var favCards = []
 
-    User.findOne({ discordid: user })
+    await User.findOne({ discordid: user })
         .then(({ favorites }) => {
             favorites.forEach(fav => { favCards.push(fav) })
         })
 
-    Card.findOne({ id: cardId })
+    await Card.findOne({ id: cardId })
         .then(card => {
             favCards.push(card)
             axios.put(`/api/users/update/${user}`, { favorites: favCards })

@@ -11,7 +11,7 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
-    "seed": "cd seed/ && node cardseed.js"
+    "seed": "cd seed/ && node cardseed.js && cd .."
   },
   "author": "Michiel Mulders",
   "license": "ISC",

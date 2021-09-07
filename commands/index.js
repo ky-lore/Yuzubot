@@ -13,5 +13,6 @@ module.exports = {
   RemoveFav: require('./removefav'),
   debugAsyncTest: require('./async'),
   Pity: require('./pity'),
-  AddPity: require('./addpity')
+  AddPity: require('./addpity'),
+  ShowCard: require('./showcard')
 };
